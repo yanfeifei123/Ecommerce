@@ -1,0 +1,38 @@
+ 
+
+<home wx:if="{{PageCur=='home'}}"></home>
+<sorder wx:if="{{PageCur=='sorder'}}"></sorder>
+<product wx:if="{{PageCur=='product'}}"></product>
+<user wx:if="{{PageCur=='my'}}"></user>
+
+<view class="cu-bar tabbar bg-white shadow foot"  >
+
+  <view class="action" bindtap="NavChange" data-cur="home">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/busin/home{{PageCur=='home'?'_h':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='home'?'text-themeColor':'text-default'}}">首页</view>
+  </view>
+
+  <view class="action" bindtap="NavChange" data-cur="sorder">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/busin/order{{PageCur=='sorder'?'_h':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='sorder'?'text-themeColor':'text-default'}}">订单</view>
+  </view>
+
+<view class="action" bindtap="NavChange" data-cur="product">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/busin/comm{{PageCur=='product'?'_h':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='product'?'text-themeColor':'text-default'}}">商品</view>
+  </view>
+
+  <view class="action" bindtap="NavChange" data-cur="my">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/busin/user{{PageCur=='my'?'_h':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='my'?'text-themeColor':'text-default'}}">我的</view>
+  </view>
+
+</view>

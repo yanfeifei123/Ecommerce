@@ -1,0 +1,189 @@
+<!--  订单详情 -->
+<view class="cates">
+  <scroll-view class="catesscroll-view" scroll-y="true" bindscrolltolower="bindDownLoad" bindscrolltoupper="topLoad" style="height:{{scrollheight}}px">
+
+    <view class="orderBox">
+      <!--  订单状态 -->
+      <view class="titleinfo">
+        <view class="state" wx:if="{{orderDetail.iscomplete ==0 &&  orderDetail.self == 0}}">预计<text style="color:#EF8732">{{orderDetail.hour}}</text>送达</view>
+        <view class="state" wx:if="{{orderDetail.iscomplete ==0 &&  orderDetail.self == 1}}">到店自取</view>
+        <view class="state" wx:if="{{orderDetail.iscomplete ==1}}">订单已完成</view>
+        <view class="deliveryinfo">{{orderDetail.exptimeinf}}</view>
+      </view>
+      <view class="opt">
+        <view class="optitem">
+          <view class="optitemimagesview">
+            <image class="optitemimages" src="/images/applyforrefund.png"></image>
+          </view>
+          <view class="optitemimagesview">申请退款</view>
+        </view>
+        <view class="optitem">
+          <view class="optitemimagesview">
+            <image class="optitemimages" src="/images/lxsj.png"></image>
+          </view>
+          <view class="optitemimagesview">联系商家</view>
+        </view>
+        <view class="optitem">
+          <view class="optitemimagesview">
+            <image class="optitemimages" src="/images/edit.png"></image>
+          </view>
+          <view class="optitemimagesview">修改地址电话</view>
+        </view>
+      </view>
+    </view>
+    <!--  订单状态 -->
+
+    <view class="orderBox">
+      <!--  订单商品明细 -->
+      <view class="titleinfo" style="justify-content: start;font-size: 30rpx;font-weight: bold;">
+        {{orderDetail.branchname}}
+      </view>
+      <view class="orderdetails">
+
+        <view class="orderdetailsitem" wx:for="{{orderDetail.orderItems}}">
+          <!-- 订单商品明细 动态部分 -->
+
+          <view class="orderImagesview">
+            <image class="orderImages" src="{{item.imagepath}}"></image>
+          </view>
+
+          <view class="orderdetailnum">
+            <view class="ordername">
+              <view style="display: flex;align-items: center;justify-content:center">
+                <text class="discount" wx:if="{{orderDetail.ismember == 1 }}">折</text>{{item.ismeal==1? item.name+'(套餐)': item.name}}
+              </view>
+              <view style="display: flex;align-items: center;justify-content:center">
+
+                <view style="text-decoration: line-through;color:#666;" wx:if="{{orderDetail.ismember == 1 && item.price!=item.memberprice }}">
+                  {{suffix}}{{item.price}}
+                </view>
+
+                <view style="font-weight: bold; margin-left:10px; ">
+                  {{suffix}}{{orderDetail.ismember ==1 ? item.memberprice : item.price}}
+                </view>
+              </view>
+            </view>
+            <view class="ordernameNum">
+              {{specification}}{{item.number}}
+            </view>
+          </view>
+
+          <view class="orderdetailschild" wx:for="{{item.orderItems}}">
+            <view style="width:15%"></view>
+            <view style="width:85%;display: flex;align-items: center;justify-content: space-between;">
+
+              <view class="orderImagesview">
+                <image class="orderImages" src="{{item.imagepath}}"></image>
+              </view>
+
+              <view class="orderdetailnum">
+
+                <view class="ordername">
+
+                  <view style="display: flex;align-items: center;justify-content:center">
+                    {{item.name}}
+                  </view>
+                  <view style="display: flex;align-items: center;justify-content:center">
+                    {{suffix}}{{item.price}}
+                  </view>
+
+                </view>
+                <view class="ordernameNum">
+                  {{specification}}{{item.number}}
+                </view>
+
+              </view>
+
+
+
+            </view>
+          </view>
+          <!--  遍历子集 -->
+
+
+        </view>
+        <!-- 订单商品明细 动态部分 -->
+
+        <view class="orderdetailsitem" style="margin-top: 5px;" wx:if="{{orderDetail.self==0}}">
+          <view>配送费</view>
+          <view>{{suffix}}{{orderDetail.deliveryfee}}</view>
+        </view>
+
+        <view class="orderdetailsitem" style="margin-top: 5px;" wx:if="{{orderDetail.firstorder!=0}}">
+          <view class="cu-tag round" style="background-color: #b885dc;color:#fff">首单客户立减</view>
+          <view style="">-{{suffix}}{{orderDetail.firstorder}}</view>
+        </view>
+        <view class="orderdetailsitem" style="margin-top: 5px;">
+          <view> 已优惠合计 </view>
+          <view style="">-{{suffix}}{{orderDetail.discount}}</view>
+        </view>
+        <view class="orderdetailsitem" style="margin-top: 5px;">
+          <view> 实际支付 </view>
+          <view style="font-weight: bold">{{suffix}}{{orderDetail.totalfee}}</view>
+        </view>
+
+
+      </view>
+    </view>
+    <!--  订单商品明细 -->
+
+    <view class="orderBox">
+      <view class="titleinfo" style="justify-content: start;font-size: 30rpx;font-weight: bold;">
+        配送信息
+      </view>
+      <view class="psinfoview">
+        <view class="psinfoviewitem">
+          <view class="psinfoviewitemStext" style="color: #666;">期望时间</view>
+          <view class="psinfoviewitemStext">{{orderDetail.exptime}}</view>
+        </view>
+        <view class="psinfoviewitem" wx:if="{{orderDetail.uaddress}}">
+          <view class="psinfoviewitemStext" style="color: #666;width:20%;">配送地址</view>
+          <view class="psinfoviewitemStext" style="width:80%;text-align: right">
+            {{orderDetail.uaddress.area}} {{orderDetail.uaddress.detailed}} ({{orderDetail.uaddress.name}}) {{ orderDetail.uaddress.gender}} {{ phone.toHide(orderDetail.uaddress.phone) }}
+
+          </view>
+        </view>
+        <view class="psinfoviewitem">
+          <view class="psinfoviewitemStext" style="color: #666;">配送服务</view>
+          <view class="psinfoviewitemStext" style="">{{orderDetail.disservice}} </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="orderBox">
+      <view class="titleinfo" style="justify-content: start;font-size: 30rpx;font-weight: bold;">
+        订单信息
+      </view>
+      <view class="psinfoview">
+        <view class="psinfoviewitem">
+          <view class="psinfoviewitemStext" style="color: #666;">订单编号</view>
+          <view class="psinfoviewitemStext" style="">{{orderDetail.orderno}} </view>
+        </view>
+        <view class="psinfoviewitem">
+          <view class="psinfoviewitemStext" style="color: #666;">下单时间</view>
+          <view class="psinfoviewitemStext" style="">{{orderDetail.ordertime}} </view>
+        </view>
+        <view class="psinfoviewitem" wx:if="{{orderDetail.iscomplete==1}}">
+          <view class="psinfoviewitemStext" style="color: #666;">完成时间</view>
+          <view class="psinfoviewitemStext" style="">{{orderDetail.completetime}} </view>
+        </view>
+        <view class="psinfoviewitem">
+          <view class="psinfoviewitemStext" style="color: #666;">支付方式</view>
+          <view class="psinfoviewitemStext" style="">在线支付</view>
+        </view>
+      </view>
+    </view>
+
+  </scroll-view>
+</view>
+
+<wxs module="phone">
+  var toHide = function(array) {
+    var mphone = '';
+    if (!!array) {
+      mphone = array.substring(0, 3) + '****' + array.substring(7);
+    }
+    return mphone;
+  }
+  module.exports.toHide = toHide;
+</wxs>

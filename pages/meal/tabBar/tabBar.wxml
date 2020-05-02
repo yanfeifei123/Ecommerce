@@ -1,0 +1,30 @@
+<!--pages/meal/tabBar/tabBar.wxml-->
+
+<index id="userordering" wx:if="{{PageCur=='index'}}"></index>
+<order id="order" wx:if="{{PageCur=='order'}}"></order>
+<user wx:if="{{PageCur=='user'}}"></user>
+
+<view class="cu-bar tabbar bg-white shadow foot" id="tabbar">
+
+  <view class="action" bindtap="NavChange" data-cur="index">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/index{{PageCur=='index'?'_H':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='index'?'text-themeColor':'text-default'}}">点餐</view>
+  </view>
+
+  <view class="action" bindtap="NavChange" data-cur="order">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/order{{PageCur=='order'?'_H':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='order'?'text-themeColor':'text-default'}}">订单</view>
+  </view>
+
+  <view class="action" bindtap="NavChange" data-cur="user">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/user{{PageCur=='user'?'_H':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='user'?'text-themeColor':'text-default'}}">我的</view>
+  </view>
+
+</view>

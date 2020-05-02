@@ -1,0 +1,93 @@
+<!-- 商家后台  -->
+
+<view class="cates">
+	<view class="box">
+		<view class="boxtitle">我的应用</view>
+		<view class="boxtappcenter">
+			<view class="boxtapp" hover-class="" hover-start-time="100" hover-stay-time="100">
+				<image class="boxtappimage" src="/images/busin/dpj.png"></image>
+				<view>设备管理</view>
+			</view>
+			<view class="boxtapp" hover-class="" hover-start-time="100" hover-stay-time="100">
+				<image class="boxtappimage" src="/images/busin/dd.png"></image>
+				<view>订单管理</view>
+			</view>
+			<view class="boxtapp" hover-class="" hover-start-time="100" hover-stay-time="100">
+				<image class="boxtappimage" src="/images/busin/sp.png"></image>
+				<view>商品管理</view>
+			</view>
+			<view class="boxtapp" hover-class="" hover-start-time="100" hover-stay-time="100">
+				<image class="boxtappimage" src="/images/busin/yg.png"></image>
+				<view>员工管理</view>
+			</view>
+			<view class="boxtapp" hover-class="" hover-start-time="100" hover-stay-time="100">
+				<image class="boxtappimage" src="/images/busin/cw.png"></image>
+				<view>财务结算</view>
+			</view>
+		</view>
+	</view>
+	<view class="box">
+		<view class="boxtitlespace-between">
+			<view style=""> 订单汇总</view>
+			<view class="boxtitlespace-tab">
+				<view class="boxtitlespace-tab-item">
+					今天
+					<view class="line-style line-style-selected"></view>
+				</view>
+				<view class="boxtitlespace-tab-item">
+					昨天
+					<view class="line-style"></view>
+				</view>
+				<view class="boxtitlespace-tab-item">
+					上周
+					<view class="line-style"></view>
+				</view>
+				<view class="boxtitlespace-tab-item">
+					上月
+					<view class="line-style"></view>
+				</view>
+			</view>
+		</view>
+		<view class="summary">
+
+			<view class="summary-item" style="border-top: 1px solid #ededed;border-right: 1px solid #ededed;">
+				<view class="summary-item-title">
+					订单总金额(元)
+				</view>
+				<view class="summary-item-price">
+					{{suffix}}11253.00
+				</view>
+			</view>
+
+			<view class="summary-item" style="border-top: 1px solid #ededed;">
+				<view class="summary-item-title">
+					订单数量(笔)
+				</view>
+				<view class="summary-item-price">
+					1500
+				</view>
+			</view>
+			
+			<view class="summary-item" style="border-top: 1px solid #ededed;border-right: 1px solid #ededed;">
+				<view class="summary-item-title">
+					退款金额(元)
+				</view>
+				<view class="summary-item-price">
+					{{suffix}}0.00
+				</view>
+			</view>
+			
+			 <view class="summary-item" style="border-top: 1px solid #ededed;">
+				<view class="summary-item-title">
+					退款单笔数(元)
+				</view>
+				<view class="summary-item-price">
+				   0
+				</view>
+			</view>
+
+
+
+		</view>
+	</view>
+</view>

@@ -1,0 +1,218 @@
+/*  订单详情 */
+
+.cates {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+ 
+}
+
+.catesscroll-view {
+  width: 95%;
+  height: calc(100vh-55px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+}
+
+.orderBox {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 14rpx;
+  padding: 10px 15rpx;
+  margin-top: 15rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.titleinfo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+
+.state {
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.deliveryinfo {
+  width: 100%;
+  margin-top: 5px;
+  padding-bottom: 5px;
+  font-size: 11px;
+  color: #333;
+}
+
+.opt {
+  width: 100%;
+  border-top: 1rpx solid #ededed;
+  padding-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.optitem {
+  /* padding: 15px; */
+  height: 50px;
+  width: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.optitemimagesview {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.optitemimages {
+  width: 28px;
+  height: 28px;
+}
+
+.orderdetails {
+  width: 100%;
+  border-top: 1rpx solid #ededed;
+  padding-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.orderdetailsitem {
+  width: 100%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.orderdetailschild{
+  width: 100%;
+  margin: 5px 0;
+  /* padding: 5px; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+
+
+
+.orderImagesview {
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.orderImages {
+  height: 46px;
+  width: 46px;
+  border-radius: 5px;
+}
+
+.orderdetailnum {
+  width: 85%;
+  padding-left: 5px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.ordername {
+  width: 100%;
+  font-size: 30rpx;
+  font-weight: bold;
+  height: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ordernameNum {
+  width: 100%;
+  color: #666;
+  font-size: 12px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 25px;
+}
+
+.discount {
+  padding: 2px;
+  background-color: #ed776c;
+  color: #fff;
+  border-radius: 3px;
+  font-size: 20rpx;
+  margin-right: 3px;
+}
+
+.orderdetailprice {
+  width: 32%;
+  /* padding-left: 15px; */
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+}
+
+.psinfoview {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-top: 1rpx solid #ededed;
+  padding-top: 15px;
+}
+
+.psinfoviewitem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 5px;
+}
+
+.psinfoviewitemStext {
+  font-size: 25rpx;
+  font-weight: bold;
+}
+
+.button {
+  background-color: transparent;
+  border: 1rpx solid #ededed;
+  font-size: 25rpx;
+  font-weight: bold;
+  width: 60px;
+  height: 23px;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

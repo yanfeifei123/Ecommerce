@@ -1,0 +1,33 @@
+/* components/SearchInput/SearchInput.wxss */
+.search_input {
+  display: flex;
+  height: 30px;
+  /* padding: 5px 0; */
+  /* background-color: #8a8a8a; */
+  justify-content:center;
+  margin: 5px;
+  
+}
+
+.search_input navigator {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-color: #EDEDED;
+  border-radius: 15rpx;
+  color: #666;
+}
+
+.search_input navigator image {
+    height: 40rpx;
+    width: 40rpx;
+    margin-left: 15rpx;
+}
+
+.search_input navigator text{
+  margin-left: 15rpx;
+  font-size: 30rpx;
+  color: #8a8a8a;
+}

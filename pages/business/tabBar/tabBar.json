@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "home": "/pages/business/home/home",
+    "sorder": "/pages/business/sorder/sorder",
+    "product": "/pages/business/product/product",
+    "user": "/pages/business/my/my"
+  }
+}

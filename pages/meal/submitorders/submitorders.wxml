@@ -1,0 +1,86 @@
+<!--pages/submitorders/submitorders.wxml-->
+
+
+
+<scroll-view scroll-y="true" class="" style="height:{{ scrollheight }}px">
+
+<view class="cates">
+
+	<view class="box">
+    <view class="self {{ isself==0? 'active' :''}}"  data-id="0" bindtap="setisself">外卖配送</view>
+    <view class="self {{ isself==1? 'active':'' }}" data-id="1" bindtap="setisself">到店自取</view>
+
+		<view class="btn" wx:if="{{!isuaddress && psfcost==1}}">
+			<text class="cuIcon-add lg text-gray add"></text>
+			<button class="addbutton" bindtap="addu_address">新增收货地址</button>
+		</view>
+
+		<view class="address" wx:if="{{isuaddress && psfcost==1}}" bindtap="addu_address">
+			<view class="address1">
+				{{uaddress.area}} {{uaddress.detailed}}
+			</view>
+			<view class="address2">
+				{{uaddress.name}} {{uaddress.gender}} {{uaddress.phone}}
+			</view>
+			<text class="cuIcon-right lg text-gray right"></text>
+		</view>
+
+
+
+		<view class="delivery" wx:if="{{psfcost==1}}" >
+			<text>立即送出</text>
+			<text style="color:#4d89e5;margin-right:15rpx">大约{{timedifference}}送达</text>
+		</view>
+
+	</view>
+	<view class="box">
+		<view class="delivery" style="border-bottom: 1rpx solid #ededed;">
+			<text>饭团（杨林海源校区）</text>
+		</view>
+
+
+		<view class="commoditylist" wx:for="{{shoppingcart}}" data-id="{{item.id}}">
+			<view class="commodity">
+				<image src="{{item.imagepath}}"></image>
+				<view style="" class="wz">
+					<view class="title" style="">{{item.name}}</view>
+					<view class="name" style="">规格</view>
+					<view class="name" style="">{{specification}} {{item.num}} </view>
+				</view>
+			</view>
+			<view class="price">
+				<text  class="unitprice">{{suffix}} {{item.member==1 ? item.tprice : item.tmemberprice}} </text>
+				<text>{{suffix}} {{item.member==1? item.tmemberprice : item.tprice}} </text>
+			</view>
+		</view>
+
+		<view class="packaging">
+			<text>配送费</text>
+			<text>{{suffix}} {{psfcost}}</text>
+		</view>
+
+		<view class="packaging">
+			<text>包装费</text>
+			<text>{{suffix}} {{bzcost}}</text>
+		</view>
+		<view class="firstorder" wx:if="{{firstorder!=0}}">
+			<view class="cu-tag round" style="background-color: #b885dc;color:#fff">首单客户立减</view>
+			<view style="">{{suffix}} {{firstorder}}</view>
+		</view>
+	</view>
+
+
+</view>
+</scroll-view>
+<view class="bottom">
+	<view class="child">
+		<view class="paytheprice">
+			<view class="toprice">
+				<view style="color: #fff;font-size: 18px;font-weight: bold;">{{suffix}}{{totalprice}}</view>
+				<view style="color:#949494; margin-left: 20rpx;">已优惠{{suffix}}{{discount}}</view>
+			</view>
+		</view>
+		<view class="pay" bindtap="pay">立即支付</view>
+	</view>
+
+</view>

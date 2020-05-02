@@ -1,0 +1,9 @@
+{
+   
+  "usingComponents": {
+    "index": "/pages/meal/index/index",
+    "order": "/pages/meal/order/order",
+    "user": "/pages/meal/user/user"
+  }
+  
+}

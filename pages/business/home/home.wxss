@@ -1,0 +1,144 @@
+ 
+
+.cates {
+  width: 100%;
+  height: calc(100vh-55px);
+  display:flex;
+  align-items: center;
+  justify-content:center;
+  flex-direction:row;
+  flex-wrap:wrap;
+}
+
+.box{
+  display: flex;
+  justify-content: start;
+  flex-direction:row;
+  flex-wrap:wrap;
+  width: 95%;
+  background-color: #fff;
+  border-radius: 14rpx;
+  padding: 0 15rpx;
+  margin-top: 15rpx;
+}
+
+.boxtitle{
+  width: 100%;
+  font-size: 30rpx;
+  font-weight: bold;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding :15px;
+  /* color: #666; */
+}
+
+.boxtappcenter{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center ;
+  flex-wrap:wrap;
+  padding-bottom: 15rpx;
+}
+.boxtapp{
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+  font-size: 22rpx;
+  color: #666;
+  font-weight: bold;
+  padding:15px;
+}
+
+.boxtappimage{
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.boxtitlespace-between{
+  width: 100%;
+  font-size: 30rpx;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding :15px;
+  /* color: #666; */
+  
+}
+ 
+.boxtitlespace-tab{
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+}
+
+.boxtitlespace-tab-item{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  height: 50rpx;
+  width: 80rpx;
+  font-size: 25rpx;
+  flex-wrap:wrap;
+  
+}
+
+.line-style{
+  background-color: #fff;  
+  height: 6rpx;
+  width: 45rpx;
+}
+
+.line-style-selected{
+  background-color: #fb0028;  
+}
+
+.summary{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  padding-bottom: 15rpx;
+  padding-top: 15rpx;
+  flex-wrap: wrap;
+}
+.summary-item{
+  width: 50%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  flex-wrap:wrap;
+  
+}
+
+
+.summary-item-title{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  width: 100%;
+  color: #666;
+}
+.summary-item-price{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  width: 100%;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+
+
+
+
+.active{
+  background-color: #D1D1D5;
+}

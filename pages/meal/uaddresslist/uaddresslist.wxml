@@ -1,0 +1,26 @@
+<!--pages/meal/uaddress/uaddress.wxml-->
+
+<view class="cates" catchtouchmove="noneEnoughPeople">
+
+	<view class="addresslist {{item.isTouchMove ? 'touch-move-active' : ''}}" wx:for="{{uaddress}}" wx:key="{{index}}" data-index="{{index}}" data-id="{{item.id}}" id="{{item.id}}" hover-class="active" hover-start-time="100" hover-stay-time="100"  bindlongtap="selectuuaddress"   bindtouchstart="touchstart" bindtouchmove="touchmove">
+		<view class="content">
+			<view class="addressname">
+				<view class="dztext">
+					{{item.area}} {{item.detailed}}
+				</view>
+				<view class="dzshr">
+					{{item.name }} {{item.gender}} {{item.phone}}
+				</view>
+			</view>
+			<view class="addressedit" bindtap="updateu_address"  data-id="{{item.id}}">
+				<text class="cuIcon-write lg text-gray"></text>
+			</view>
+		</view>
+		<view class="del"  catchtap="del" data-index="{{index}}">删除</view>
+	</view>
+
+</view>
+<button class="addbottom" bindtap="adduaddress">
+	<text class="cuIcon-roundaddfill lg text-gray" style="font-size:40rpx"></text>
+	<text style="font-size:30rpx;margin-left: 5px;">增加收货地址</text>
+</button>

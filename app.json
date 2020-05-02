@@ -1,0 +1,27 @@
+{
+  "pages": [
+    "pages/meal/tabBar/tabBar",
+    "pages/business/tabBar/tabBar",
+    "pages/login/login",
+    "pages/meal/submitorders/submitorders",
+    "pages/meal/uaddresslist/uaddresslist",
+    "pages/meal/adduaddress/adduaddress",
+    "pages/meal/edituaddress/edituaddress",
+    "pages/meal/user/user",
+    "pages/meal/blogin/blogin",
+    "pages/meal/setmeal/setmeal",
+    "pages/meal/orderd/orderd"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "校园饭tuan",
+    "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置信息将用于添加收货地址"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

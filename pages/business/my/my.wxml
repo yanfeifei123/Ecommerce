@@ -1,0 +1,10 @@
+<!--pages/business/my/my.wxml-->
+<view class="cates">
+   <view class="topuser"   >
+			<image class="userInfo" src="{{userInfo.avatarurl}}"></image>
+			<view class="nickName">{{userInfo.nickName}}</view>
+	 </view>
+    <view class="signout" bindtap="signout" hover-class="active" hover-start-time="100" hover-stay-time="100" >
+			   退出登录
+	</view>
+</view>

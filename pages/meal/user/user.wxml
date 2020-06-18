@@ -1,0 +1,70 @@
+<!--pages/meal/user/user.wxml-->
+
+<view class="cates">
+
+
+	<view class="loginview" wx:if="{{userInfo==null}}">
+		<button bindtap="login">登录/注册</button>
+	</view>
+	<view class="topuser" wx:if="{{userInfo!=null}}">
+		<image class="userInfo" src="{{userInfo.avatarurl}}"></image>
+		<view class="nickName">{{userInfo.nickname}}</view>
+	</view>
+
+	<view class="my">
+
+		<view class="mylist" bindtap="toMyaddress" hover-class="active" hover-start-time="100" hover-stay-time="100">
+			<view>
+				<text class="cuIcon-location lg text-gray"></text>
+				<text class="infotext">收货地址</text>
+			</view>
+			<view>
+				<text class="cuIcon-right lg text-gray right"></text>
+			</view>
+		</view>
+
+		<view class="mylist" bindtap="toMymember" hover-class="active" hover-start-time="100" hover-stay-time="100">
+			<view>
+				<text class="cuIcon-newsfill lg text-gray"></text>
+				<text class="infotext">会员中心</text>
+			</view>
+			<view>
+				<text class="cuIcon-right lg text-gray right"></text>
+			</view>
+		</view>
+
+
+		<view class="mylist" bindtap="toMycoupon" hover-class="active" hover-start-time="100" hover-stay-time="100">
+			<view>
+				<text class="cuIcon-card lg text-gray"></text>
+				<text class="infotext">优惠券</text>
+			</view>
+			<view>
+				<text class="cuIcon-right lg text-gray right"></text>
+			</view>
+		</view>
+
+		<view class="mylist" hover-class="active" hover-start-time="100" hover-stay-time="100" bindtap="toBlogin">
+			<view>
+				<text class="cuIcon-apps lg text-gray"></text>
+				<text class="infotext">商家后台登录</text>
+			</view>
+			<view>
+				<text class="cuIcon-right lg text-gray right"></text>
+			</view>
+		</view>
+
+		<view class="mylist" hover-class="active" hover-start-time="100" hover-stay-time="100" bindtap="makePhoneCall">
+			<view>
+				<text class="cuIcon-dianhua lg text-gray"></text>
+				<text class="infotext">联系客服</text>
+			</view>
+			<view>
+				<text class="cuIcon-right lg text-gray right"></text>
+			</view>
+		</view>
+	</view>
+	<view class="signout" bindtap="signout" wx:if="{{userInfo!=null}}">
+		退出登录
+	</view>
+</view>

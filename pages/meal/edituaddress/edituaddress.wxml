@@ -1,0 +1,46 @@
+
+<view class="cates" style="height:{{height}}px">
+
+	<view class="content">
+		<view class="textview" bindtap="getArea">
+			<view class="text">
+				收货地址：
+
+			</view>
+			<text class="cuIcon-location lg text-gray"></text>
+			<view class="inputtext" style="color:#666;font-size:14px">{{uaddress.area}} </view>
+			<text class="cuIcon-right lg text-gray right"  ></text>
+		</view>
+		<view class="textview">
+			<view class="text">
+				门牌号：
+			</view>
+			<input class="inputtext" placeholder="详细地址，列1栋一单元101" bindblur="setdetailed" value="{{uaddress.detailed}}"></input>
+		</view>
+		<view class="textview">
+			<view class="text">
+				收货人：
+			</view>
+			<input style="width:35%;" class="inputtext" placeholder="收货人姓名" bindblur="setname" value="{{uaddress.name}}"></input>
+			<radio-group bindchange="radioChange">
+				<label class="margin-left-sm">
+					<radio class="yellow xs radio" value="先生" checked="{{uaddress.gender =='先生' ? true:false }}"   style="transform:scale(0.7)"></radio>
+					<text> 先生</text>
+				</label>
+				<label class="margin-left-sm">
+					<radio class="yellow xs radio" value="女士" checked="{{uaddress.gender =='女士' ? true:false }}" style="transform:scale(0.7)"></radio>
+					<text> 女士</text>
+				</label>
+			</radio-group>
+		</view>
+		<view class="textview">
+			<view class="text">
+				手机号：
+			</view>
+			<input class="inputtext"  type="number" placeholder="收货人手机号" bindblur="setphone"  bindinput="setphone" value="{{uaddress.phone}}"></input>
+		</view>
+		<button class="button" bindtap="submitaddress">保存地址</button>
+
+	</view>
+
+</view>

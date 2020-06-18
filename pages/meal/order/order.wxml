@@ -1,0 +1,57 @@
+<view class="cates">
+
+	<coolui-scroll class="catesscroll-view" style="height:{{scrollheight}}px" page="{{scrollTm.page}}" totalPage="{{scrollTm.totalPage}}" bindrefresh="refreshTm" bindloadMore="loadMoreTm" isEmpty="{{orderList.length}}" emptyImg="{{scrollTm.emptyImg}}" refreshStyle="black" refreshBackground="#f2f2f2" refreshTitleShow="{{false}}" refreshthreshold="{{90}}" refreshBackgroundImage="{{scrollTm.refreshBackgroundImage}}" refreshColor="{{scrollTm.refreshColor}}">
+		<view class="list-inner" slot="inner">
+			<view class="orderBox" wx:for="{{orderList}}" id="{{item.id}}" wx:key="unique"  data-info="{{item.info}}" catchtap="nvlDetailed">
+
+				<view class="orderBoxTitle">
+					<view class="orderBoxTitle1">
+						<image class="orderBoxTitleImages" src="/images/logo.png"></image>
+					</view>
+					<view class="orderBoxStatus">
+						<view class="orderBoxFont">
+							{{item.branchname}}
+						</view>
+						<view style="{{ (item.iscomplete ==0    || item.info=='待退款' ||  item.info=='未退款')  ? 'color:#fb0028' : '' }}">
+							{{item.info}}
+						</view>
+					</view>
+				</view>
+
+				<view class="orderBoxcenter">
+					<scroll-view class="orderBoxcenterscrollview" scroll-with-animation="true" scroll-x="true" scroll-left="0">
+
+						<view class="orderBoxcenterscrollviewItem" wx:for="{{item.orderItems}}">
+							<image class="orderBoxcenterscrollviewimage" src="{{baseurl+ item.imagepath}}"></image>
+							<view class="textView">
+								{{item.name}}
+							</view>
+						</view>
+
+					</scroll-view>
+					<view class="orderBoxPrice">
+						<view style="width:100%;display: flex;justify-content: flex-end;align-items: center;font-weight: bold;">
+							{{suffix}} {{item.totalfee}}
+						</view>
+						<view style="width:100%;display: flex;justify-content: flex-end;align-items: center;color:#999;">
+							{{item.total}} 件
+						</view>
+					</view>
+				</view>
+
+				<view class="orderBoxTotal" style="padding: 5px 0;">
+					<view wx:if="{{item.status==1}}">
+						<button class="button" data-id="{{item.id}}" catchtap="comingOrder">在来一单</button>
+					</view>
+					<view wx:if="{{item.status==0}}" style="display: flex;align-items: center;justify-content:center;">
+					  <button class="button" data-id="{{item.id}}" catchtap="pay"  >{{suffix}}{{item.totalfee}}去支付</button>
+						<button class="button" data-id="{{item.id}}" catchtap="deleteOrder" style="color:#fb0028;margin-left: 8px;">删除</button>
+					</view>
+				</view>
+			</view>
+		</view>
+
+	</coolui-scroll>
+
+
+</view>

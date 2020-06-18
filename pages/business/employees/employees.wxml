@@ -1,0 +1,37 @@
+  <view class="container">
+
+  	<view class="searchview">
+  		<view class="searchviewform">
+  			<text class="cuIcon-search" style="margin: 0 0.5em 0 0.8em;"></text>
+  			<input class="searchviewforminput" type="text" placeholder="搜索" confirm-type="search" bindinput="bindName"></input>
+  		</view>
+  	</view>
+
+
+  	<coolui-scroll class="catesscroll-view" style="height:{{height}}px" page="{{scrollTm.page}}" totalPage="{{scrollTm.totalPage}}" bindrefresh="refreshTm" bindloadMore="loadMoreTm" isEmpty="{{userList.length}}" emptyImg="{{scrollTm.emptyImg}}" refreshStyle="black" refreshBackground="#f2f2f2" refreshTitleShow="{{false}}" refreshthreshold="{{90}}" refreshBackgroundImage="{{scrollTm.refreshBackgroundImage}}" refreshColor="{{scrollTm.refreshColor}}">
+  		<view class="list-inner" slot="inner">
+
+
+  			<view class="item" style="border-bottom: 1px solid #ededed;" wx:key="unique" wx:for="{{userList}}">
+  				<view class="itememployee">
+
+  					<view style="display: flex;justify-content: center;align-items: center;">
+  						<image class="avatar" src="{{item.avatarurl}}"> </image>
+  						<view style="font-weight: bold;">{{item.nickname}} </view>
+  					</view>
+
+  					<radio-group bindchange="radioChange">
+  						<label class="radio">
+  							<radio value="{{item.id}}" />
+  						</label>
+  					</radio-group>
+
+
+  				</view>
+  			</view> <!-- item -->
+
+
+  		</view>
+  	</coolui-scroll>
+
+  </view>

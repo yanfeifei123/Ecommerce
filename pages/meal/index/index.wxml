@@ -1,0 +1,118 @@
+ 
+	<view class="cates">
+    <!-- <view class="b_product_view" style="height: 100%;" wx:if="{{allow}}">超出配送范围</view> -->
+		<view class="businfoLogo">
+			<view class="viewbusinfo">
+				<view class="businfo">
+					{{bbranch.name}}
+				</view>
+				<view class="tailbusinfo">
+					{{bbranch.area}} {{bbranch.detailed}}
+				</view>
+			</view>
+		</view>
+
+		<view class="searchview">
+			<view class="searchviewform">
+				<text class="cuIcon-search" style="margin: 0 0.5em 0 0.8em;"></text>
+				<input class="searchviewforminput" type="text" placeholder="输入关键字" confirm-type="search" bindinput="searchInput" value="{{searchValue}}"></input>
+			</view>
+			<view class="action">
+				<button class="cu-btn bg-gradual-green shadow-blur round" bindtap="search">{{searchButton}}</button>
+			</view>
+		</view>
+
+
+		<view class="cates_container" style="height:{{  containerheight }}px">
+
+			<!-- 左 -->
+			<scroll-view scroll-y="true" class="left_menu" scroll-with-animation="true" scroll-top="{{HZL_leftToTop}}">
+				<view class="menu_item {{ item.id == currentLeftSelect? 'active':'' }}" wx:for="{{commoditys}}" wx:key="{{item.id}}" data-id="{{'category_'+ item.id}}" id="{{'category_'+ item.id}}" bindtap="intoVieleft">
+					{{item.name}}
+				</view>
+			</scroll-view>
+			<!-- 右 -->
+			<scroll-view scroll-y="true" scroll-with-animation="true" class="right_content" scroll-into-view="{{toView}}" bindscroll="intoVieright">
+
+				<view class="food" wx:for="{{commoditys}}" wx:for-index='parentIndex' wx:key="{{item.id}}  " id="{{'category_'+ item.id}}">
+					<view class="food-list-title">
+						<text>{{item.name}}</text>
+					</view>
+
+					<view class="food-list" wx:for="{{item.bproductsitems}}" wx:key="{{item.id}}" data-id="{{item.id}}" hover-class="productActive" hover-start-time="100" hover-stay-time="100" bindlongtap="hideCart">
+
+						<view class="food-list-viewimage">
+							<image class="food-list-image" src="{{baseurl+item.imagepath}}" />
+						</view>
+						<view class="food-list-viewinfo">
+							<view class="food-list-viewinfo-name">{{item.name}}</view>
+							<view class="food-list-evaluate-text"> 月售{{item.msales}}</view>
+
+							<view class="food-list-opt">
+								<view class="food-list-price">{{suffix}}{{item.price}}
+									<text class="food-list-unitprice">会员{{suffix}}{{item.memberprice}}</text>
+								</view>
+
+								<view class="food-list-opt-addsub">
+									<view wx:if='{{item.num == 0 }}' class="food-list-opt-num"></view>
+									<view wx:if='{{item.num == 0 }}' class="food-list-opt-num"></view>
+
+									<image wx:if='{{item.num != 0 }}' class="food-list-opt-image" src="/images/minuscircle.png" data-parentIndex='{{parentIndex}}' data-index='{{index}}' bindtap="bindtapminus"></image>
+									<view wx:if='{{item.num != 0 }}' class="food-list-opt-num">{{item.num}}</view>
+									<image class="food-list-opt-image" src="/images/plus-circle.png" data-parentIndex='{{parentIndex}}' data-index='{{index}}' bindtap="bindtapplus"></image>
+								</view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</scroll-view>
+		</view>
+
+
+		<view class="good_box" hidden="{{hide_good_box}}" style="left: {{bus_x}}px; top: {{bus_y}}px;"></view>
+
+
+		<!-- 购物车里的东西 -->
+		<view class="bottomcartbox" style="display: {{bottomcartbox}};">
+			<view class="head">
+				<view class="text">
+					<text>已选商品</text>
+					<text style="color:var(--themeColor);margin-left: 10rpx;">(配送费{{suffix}}{{bbranch.psfcost}})</text>
+				</view>
+				<view class="text" bindtap="clearshoppingcart">
+					<image src="/images/delete.png"></image>
+					<text style="color:#333333">清空购物车</text>
+				</view>
+			</view>
+			<scroll-view scroll-y="true" class="cartlist" style="height:320rpx">
+
+				<view class="item" wx:for="{{shoppingcart}}" data-id="{{item.id}}">
+					<text>{{item.name}}</text>
+					<text class="tprice">{{suffix}}{{item.tprice}}</text>
+					<view class="food-list-opt-addsub">
+						<image class="food-list-opt-image" src="/images/minuscircle.png" data-parentIndex='{{item.parentIndex}}' data-index='{{item.index}}' data-id="{{item.id}}" bindtap="cartjian"></image>
+						<view class="food-list-opt-num">{{item.num}}</view>
+						<image class="food-list-opt-image" src="/images/plus-circle.png" data-parentIndex='{{item.parentIndex}}' data-index='{{item.index}}' data-id="{{item.id}}" bindtap="cartjia"></image>
+					</view>
+				</view>
+
+			</scroll-view>
+		</view>
+
+
+		<view class="bottomcart" style="display:{{display}}">
+			<view class="cartView" bindtap="viewbottomcartbox">
+				<image class="cart" src="/images/shop-cat-on1.png"></image>
+				<view class="productroundmark">{{productamount}}</view>
+			</view>
+			<text class="totalprice">{{suffix}}{{totalprice}} </text>
+			<view class="submitproduct">
+				<button open-type="getUserInfo" class="submitbutton" bindgetuserinfo="submitorders" wx:if="{{!userInfo}}" disabled="{{bbranch.bornot == 0 ? true:false }}">{{submitinfo}}</button>
+				<button class="submitbutton" bindtap="switchTab" wx:if="{{userInfo}}" disabled="{{bbranch.bornot == 0 ? true:false }}">{{submitinfo}}</button>
+			</view>
+		</view>
+		<view class="cover" bindtap="showShopCartFn" style="display:{{bottomcartbox}}"></view>
+
+
+
+	</view>

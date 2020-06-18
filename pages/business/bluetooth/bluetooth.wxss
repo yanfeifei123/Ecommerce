@@ -1,0 +1,47 @@
+.viewCenter{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.viewCenter .box{
+  width: 100%;
+  margin-top: 5px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.viewCenter .box .item{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.viewCenter .box .item .list{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top:15px;
+}
+.bluetoothLoading{
+  width: 16px;
+  height: 16px;
+  margin-left: 10px;
+  
+}
+
+.buttonv{
+  width: 80px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  background-color:#8a8a8a;
+  border-radius: 5px;
+}

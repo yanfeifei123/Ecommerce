@@ -1,0 +1,40 @@
+/* pages/login/login.wxss */
+
+.cates {
+  width: 100%;
+  height: 100%;
+  background-color:#fff; 
+}
+
+.catesview{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.viewitem{
+  margin-top: 15px;
+  width: 80%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.weixin{
+  height: 48px;
+  width: 48px;
+}
+
+.button {
+  margin-top: 15px;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #07c160;
+  color: #fff;
+}

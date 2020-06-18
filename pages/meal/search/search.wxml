@@ -1,0 +1,9 @@
+ <view class="searchview">
+ 	<view class="searchviewform">
+ 		<text class="cuIcon-search" style="margin: 0 0.5em 0 0.8em;"></text>
+ 		<input class="searchviewforminput" type="text" placeholder="搜索" confirm-type="search" bindinput="searchIcon"></input>
+ 	</view>
+   <view class="action">
+      <button class="cu-btn bg-gradual-green shadow-blur round">搜索</button>
+   </view>
+ </view>

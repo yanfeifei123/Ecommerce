@@ -1,0 +1,179 @@
+.item{
+  text-align: center;
+  line-height: calc(8vh - 1rpx);
+  background-color: #fff;
+  margin-bottom: 1rpx;
+}
+
+
+.cates {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.catesscroll-view {
+  width: 95%;
+  height: calc(100vh-55px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.orderBox {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 14rpx;
+  padding: 10px 15rpx;
+  margin-top: 15rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.orderBoxTitle {
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 5px;
+  /* border-bottom: 1rpx solid #ededed; */
+}
+
+.orderBoxTitle1 {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 15%;
+}
+
+.orderBoxTitleImages {
+  width: 36px;
+  height: 36px;
+  border-radius: 7px;
+}
+
+.orderBoxTitleInfo {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.orderBoxFontView {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.orderBoxFont {
+  font-size: 30rpx;
+  width: 70%;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
+}
+
+.orderBoxFontTag {
+  position: absolute;
+  top: 30%;
+  right: 10rpx;
+}
+
+.orderBoxStatus {
+  /* color: #fb0028; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 85%;
+}
+
+.orderBoxcenter {
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 5px;
+}
+
+.orderBoxcenterscrollview {
+  width: 80%;
+  white-space: nowrap;
+}
+
+.orderBoxPrice {
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.orderBoxcenterscrollviewItem {
+  width: 89px;
+  height: 89px;
+  padding-right: 8px;
+  display: inline-block;
+}
+
+.textView {
+  width: 85px;
+  color: #333;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size:12px; 
+}
+
+.orderBoxcenterscrollviewimage {
+  width: 85px;
+  height: 63px;
+  border-radius: 8px;
+}
+
+.orderBoxTotal {
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 2rpx 0;
+  
+}
+
+.button {
+  font-size: 25rpx;
+  font-weight: bold;
+  height: 30px;
+  width: auto;
+  background-color: transparent;
+  border: 1rpx solid #ededed;
+  
+}
+
+.bottom{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+.loading{
+  margin-left: 5px;
+  width: 16px;
+  height: 16px;
+}
+
+

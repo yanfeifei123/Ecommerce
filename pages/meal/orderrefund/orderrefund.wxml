@@ -1,0 +1,141 @@
+<view class="cates">
+
+	<scroll-view class="catesscroll-view" scroll-y="true" style="height:{{scrollheight}}px">
+
+		<view class="orderBox">
+			<view class="titleinfo">
+				<view class="title1">退款信息</view>
+				<view class="deliveryinfo">订单编号：{{orderDetail.orderno}}</view>
+
+				<view class="orderdetails">
+
+					<view class="orderdetailsitem" wx:for="{{orderDetail.orderItems}}">
+						<!-- 订单商品明细 动态部分 -->
+
+						<view class="orderImagesview">
+							<image class="orderImages" src="{{baseurl+ item.imagepath}}"></image>
+						</view>
+
+						<view class="orderdetailnum">
+							<view class="ordername">
+								<view style="display: flex;align-items: center;justify-content:center">
+									<text class="discount" wx:if="{{orderDetail.ismember == 1 && item.price!=item.memberprice }}">折</text>{{item.name}}
+								</view>
+								<view style="display: flex;align-items: center;justify-content:center">
+
+									<view style="text-decoration: line-through;color:#666;" wx:if="{{orderDetail.ismember == 1 && item.price!=item.memberprice }}">
+										{{suffix}}{{item.price}}
+									</view>
+
+									<view style="font-weight: bold; margin-left:10px; ">
+										{{suffix}}{{orderDetail.ismember ==1 ? item.memberprice : item.price}}
+									</view>
+								</view>
+							</view>
+							<view class="ordernameNum">
+								{{specification}}{{item.number}}
+							</view>
+						</view>
+
+						<view class="orderdetailschild" wx:for="{{item.orderItems}}">
+							<view style="width:15%"></view>
+							<view style="width:85%;display: flex;align-items: center;justify-content: space-between;">
+
+								<view class="orderImagesview">
+									<image class="orderImages" src="{{baseurl+item.imagepath}}"></image>
+								</view>
+
+								<view class="orderdetailnum">
+
+									<view class="ordername">
+
+										<view style="display: flex;align-items: center;justify-content:center">
+											{{item.name}}
+										</view>
+
+
+
+										<view style="display: flex;align-items: center;justify-content:center">
+											<text style="text-decoration:line-through;margin-right:20rpx;color:#666;" wx:if="{{orderDetail.ismember ==1 && item.memberprice!=item.price}}">{{suffix}}{{item.price}}</text> {{suffix}}{{orderDetail.ismember ==1 ? item.memberprice : item.price}}
+										</view>
+
+
+									</view>
+									<view class="ordernameNum">
+										{{specification}}{{item.number}}
+									</view>
+
+								</view>
+
+
+
+							</view>
+						</view>
+						<!--  遍历子集 -->
+
+
+					</view>
+					<!-- 订单商品明细 动态部分 -->
+
+					<view class="orderdetailsitem" style="margin-top: 5px;" wx:if="{{orderDetail.self==0}}">
+						<view>配送费</view>
+						<view>{{suffix}}{{orderDetail.deliveryfee}}</view>
+					</view>
+
+					<view class="orderdetailsitem" style="margin-top: 5px;" wx:if="{{orderDetail.firstorder!=0}}">
+						<view class="cu-tag round" style="background-color: #b885dc;color:#fff">首单客户立减</view>
+						<view style="">-{{suffix}}{{orderDetail.firstorder}}</view>
+					</view>
+					<view class="orderdetailsitem" style="margin-top: 5px;">
+						<view> 已优惠合计 </view>
+						<view style="">-{{suffix}}{{orderDetail.discount}}</view>
+					</view>
+					<view class="orderdetailsitem" style="margin-top: 5px;">
+						<view> 实际支付 </view>
+						<view style="font-weight: bold">{{suffix}}{{orderDetail.totalfee}}</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<!-- 原因描述 -->
+
+		<view class="orderBox">
+			<view class="titleinfo">
+				<view class="title1">退款原因描述</view>
+				<view class="orderdetails" style="margin-top:5px;">
+
+					<view class="orderdetailsitem">
+						<textarea bindblur="bindTextAreaBlur" bindinput="bindTextAreaBlur"   value="" style="width:100%;height:100px;" placeholder="描述" />
+						</view>
+
+					   <view class="title1">图片上传</view>
+              <view class="orderdetailsitem" style="margin-top:5px; border-top: 1rpx solid #ededed;">
+							 <view class="grid col-4 grid-square flex-sub">
+									
+								 <view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+										<image src='{{imgList[index]}}' mode='aspectFill'></image>
+										<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+											<text class="cuIcon-close"></text>
+										</view>
+			          </view>
+
+								<view class="solids" bindtap="ChooseImage">
+										<text class="cuIcon-cameraadd"></text>
+						  	</view>
+
+							 
+					   </view>
+					</view>
+					<!-- 按钮 --> 
+					<view class="orderdetailsitem"> 
+					    	<button class="sbutton" bindtap="submitUorderr">提交</button>
+ 			          <button class="sbutton" bindtap="cancel">取消</button>
+					</view>
+
+				</view>
+			</view>
+		</view>
+
+	</scroll-view>
+
+</view>

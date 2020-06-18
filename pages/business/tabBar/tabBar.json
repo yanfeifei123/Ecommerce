@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "home": "/pages/business/home/home",
+    "dataa": "/pages/business/dataa/dataa",
+    "product": "/pages/business/product/product",
+    "user": "/pages/business/my/my"
+  },
+  "enablePullDownRefresh": true
+}

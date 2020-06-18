@@ -1,0 +1,66 @@
+{
+  "pages": [
+    "pages/meal/index/index",
+    "pages/meal/order/order",
+    "pages/meal/user/user",
+    "pages/login/login",
+    "pages/meal/submitorders/submitorders",
+    "pages/meal/uaddresslist/uaddresslist",
+    "pages/meal/adduaddress/adduaddress",
+    "pages/meal/edituaddress/edituaddress",
+    "pages/meal/blogin/blogin",
+    "pages/meal/setmeal/setmeal",
+    "pages/meal/orderd/orderd",
+    "pages/business/tabBar/tabBar",
+    "pages/business/orderm/orderm",
+    "pages/business/bluetooth/bluetooth",
+    "pages/business/ordermd/ordermd",
+    "pages/business/producttc/producttc",
+    "pages/business/mdgl/mdgl",
+    "pages/meal/orderrefund/orderrefund",
+    "pages/meal/orderrefundp/orderrefundp",
+    "pages/business/employee/employee",
+    "pages/business/employees/employees"
+  ],
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#fb0028",
+    "borderStyle": "black",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/meal/index/index",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index_H.png",
+        "text": "点餐"
+      },
+      {
+        "pagePath": "pages/meal/order/order",
+        "iconPath": "images/order.png",
+        "selectedIconPath": "images/order_H.png",
+        "text": "订单"
+      },
+      {
+        "pagePath": "pages/meal/user/user",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user_H.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "校园饭tuan",
+    "navigationBarTextStyle": "black"
+  },
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置信息将用于添加收货地址"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

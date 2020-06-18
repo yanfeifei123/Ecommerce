@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "coolui-scroll": "/components/dist/scroll/index",
+    "demo-block": "/components/dist/demo-block/index"
+  }
+}

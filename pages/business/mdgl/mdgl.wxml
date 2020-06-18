@@ -1,0 +1,68 @@
+<view class="cates" style="height:{{height}}px">
+
+	<view class="content">
+		<view class="textview" bindtap="getArea">
+			<view class="text">
+				地址 <text>*</text> ：
+			</view>
+			<text class="cuIcon-location lg text-gray"></text>
+			<view class="inputtext" style="color:#666;font-size:14px">{{bbranch.area}} </view>
+			<text class="cuIcon-right lg text-gray right"  ></text>
+		</view>
+		<view class="textview">
+			<view class="text">
+				门牌号<text>*</text>：
+			</view>
+			<input class="inputtext" placeholder="详细地址，列xx街道" id="detailed" bindblur="setattrbbranch" value="{{bbranch.detailed}}"></input>
+		</view>
+		<view class="textview">
+			<view class="text">
+				门店名称<text>*</text>：
+			</view>
+			<input class="inputtext" placeholder="门店名称" id="name" bindblur="setattrbbranch" value="{{bbranch.name}}"></input>
+		</view>
+		<view class="textview">
+			<view class="text">
+				手机号<text>*</text>：
+			</view>
+			<input style="width:35%;" class="inputtext" type="number" id="phone"  placeholder="手机号" bindblur="setattrbbranch" value="{{bbranch.phone}}"></input>
+			<button class="phoneNumber" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button>
+		</view>
+
+		<view class="textview">
+			<view class="text">
+				多少钱起送：
+			</view>
+			<input class="inputtext" type="number" placeholder="多少钱起送" id="firstmoney" bindblur="setattrbbranch" value="{{bbranch.firstmoney}}"></input>
+		</view>
+		<view class="textview">
+			<view class="text">
+				首单用户减：
+			</view>
+			<input class="inputtext" type="number" placeholder="多少元" id="firstorder" bindblur="setattrbbranch" value="{{bbranch.firstorder}}"></input>
+		</view>
+
+		<view class="textview">
+			<view class="text">
+				配送费：
+			</view>
+			<input class="inputtext" type="number" placeholder="多少元"  id="psfcost" bindblur="setattrbbranch" value="{{bbranch.psfcost}}"></input>
+		</view>
+		<view class="textview">
+			<view class="text" style="width:60%;">
+				是否外卖配送
+			</view>
+			<view  style="width:40%;display: flex;align-items: center;justify-content:center;">
+				<checkbox-group bindchange="setisps">
+					<checkbox value="1" checked="{{bbranch.isps ==0?false:true}}"></checkbox>
+				</checkbox-group>
+			</view>
+
+		</view>
+
+
+		<button class="button" bindtap="submitbbranch">保存</button>
+
+	</view>
+
+</view>

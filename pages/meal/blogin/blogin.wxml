@@ -1,0 +1,33 @@
+<!--pages/meal/blogin/blogin.wxml-->
+<view class="cates" style="height:{{height}}px">
+  <view class="content">
+    <view class="logoview">
+        <view style="width: 100%;display: flex;justify-content: center;align-items: center;">
+            <image class="logoimage" src="/images/logo.png"></image>
+        </view>
+        <view style="font-weight: bold;font-size: 30rpx;margin-top: 20px;width: 100%;display: flex;justify-content: center;align-items: center;">校园饭tuan</view>
+    </view>
+    <view class="error">
+         {{error}}
+    </view>
+    <!-- <view class="textview">
+        <view class="text">
+            <text class="cuIcon-peoplefill  text-gray"></text>
+        </view>
+        <input class="inputtext" placeholder="输入账号" value="{{account}}"  bindblur="setaccount"></input>
+    </view>
+    <view class="textview">
+        <view class="text" >
+            <text class="cuIcon-lock  text-gray"></text>
+        </view>
+        <input class="inputtext" type="password" placeholder="输入密码"  value=""  bindblur="setpassword"></input>
+    </view> -->
+    <view class="textview" style="border-bottom:0">
+         <view >
+            <text class="cuIcon-peoplefill text-gray lg"></text>
+         </view>
+        <view  style="margin-left: 15px;">{{userInfo.nickname}} </view>
+    </view>
+    <button class="button" bindtap="submitbLogin">微信账号登录</button>
+	</view>
+</view>

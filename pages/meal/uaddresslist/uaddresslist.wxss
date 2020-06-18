@@ -1,0 +1,110 @@
+/* pages/meal/uaddress/uaddress.wxss */
+
+.cates {
+  display:flex;
+  align-items: center;
+  justify-content:center;
+  width: 100%;
+  flex-direction:row;
+  flex-wrap:wrap;
+}
+
+.addresslist{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #ededed; 
+  border-top: 1rpx solid #ededed;
+  width: 100%;
+  height: 70px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transform: translateX(180rpx);
+  transform: translateX(180rpx);
+  margin-left: -180rpx;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.addressname{
+  display: block;
+  width: 70%;
+  height: 100%;
+  flex-wrap:wrap;
+}
+ .dztext{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: 15px;
+  font-weight: bold;
+  height: 50%;
+}
+
+ .dzshr{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  color: #666;
+  font-size: 12px;
+  /* height: 50%; */
+}
+
+.addressedit{
+  display: flex;
+  justify-content:flex-end;
+  align-items: center;
+  width: 30%;
+  height: 100%;
+}
+
+.addbottom{
+   position: fixed;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   bottom: 0;
+   height: 45px;
+   /* border-top: 1rpx solid #666; */
+   width: 100%;
+   background-color: #fff;
+   
+}
+.active{
+  background-color:  var(--yellow)
+}
+
+.del{
+  height: 100%;
+  width: 180rpx;
+
+  background-color:var(--themeColor);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  -webkit-transform: translateX(180rpx);
+  transform: translateX(180rpx);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+
+.radio{
+  margin-right: 15px;
+}
+
+.touch-move-active .content, .touch-move-active .del {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}

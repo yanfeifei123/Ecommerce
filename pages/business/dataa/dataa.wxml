@@ -1,0 +1,56 @@
+ <view class="topview">
+ 	<view class="item" style="color: #aaa; margin-top: 10px;">
+ 		今日点击率<image class="help" src="/images/help.png"> </image>
+ 	</view>
+ 	<view class="item">
+ 		<view class="box">
+
+ 			<view class="clickrate">
+ 				<view class="clickrateitem" style="color: #666;">点击次数 </view>
+ 				<view class="clickrateitem" style="font-size: 18px;font-weight: bold;margin-top: 11rpx;">{{clickObj.clickNumber}} </view>
+ 			</view>
+
+ 			<view class="dividingline"></view>
+
+ 			<view class="clickrate">
+ 				<view class="clickrateitem" style="color: #666;">点击人数</view>
+ 				<view class="clickrateitem" style="font-size: 18px;font-weight: bold;margin-top: 11rpx;">{{clickObj.clickPersonen}}</view>
+ 			</view>
+
+ 		</view>
+ 	</view>
+ </view>
+
+ <view class="topview" style="margin-top: 8px;">
+
+ 	<view class="item" style="width:100%; border-bottom: 1px solid #ededed; height: 70px;" bindtap="dataanafx">
+ 		<view class="box" style="padding:5px; ">
+
+ 			<view style="display: flex; justify-content: center; align-items: center;">
+ 				<image class="image" src="/images/busin/yhfx.png" style="margin-right: 8px;"></image>
+ 				<text>顾客分析</text>
+ 			</view>
+
+ 			<view class="">
+ 				<image class="imagejt" src="/images/jt.png" style=""></image>
+ 			</view>
+
+ 		</view>
+
+ 	</view>
+	<view class="item" style="width:100%; border-bottom: 1px solid #ededed; height: 70px;" bindtap="dataanafx">
+ 			<view class="box" style="padding:5px; ">
+
+ 				<view style="display: flex; justify-content: center; align-items: center;">
+ 					<image class="image" src="/images/busin/jyfx.png" style="margin-right: 8px;"></image>
+ 					<text>交易分析</text>
+ 				</view>
+
+ 				<view class="">
+ 					<image class="imagejt" src="/images/jt.png" style=""></image>
+ 				</view>
+
+ 			</view>
+
+ 		</view>
+</view>

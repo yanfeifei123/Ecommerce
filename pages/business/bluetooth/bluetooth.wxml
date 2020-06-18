@@ -1,0 +1,47 @@
+<wxs module="utils">
+  module.exports.max = function(n1, n2) {
+  return Math.max(n1, n2)
+  }
+  module.exports.len = function(arr) {
+  arr = arr || [];
+  return arr.length;
+  }
+</wxs>
+ <view class="viewCenter">
+
+       <view class="box"  style="">
+            <view class="item" style="margin-top: 10px;">
+               <view>
+                  蓝牙
+              </view>
+               <view>
+                <switch  checked="{{bluetoothNo}}" bindchange="bluetoothNoChange" type="switch"  />
+               </view>
+            </view>
+
+            <view class="item" style="margin-top: 20px;" wx:if="{{bluetoothNo}}">
+                   <view style=" display: flex;justify-content: center;align-items: center;"> 设备  <image class="bluetoothLoading" src="/images/loading.gif"></image></view>
+            </view>
+
+            <view class="item" style="margin-top: 30px;">
+                <view class="list" wx:for="{{devices}}"  >
+                     <view>{{item.name}}</view>
+                     <view>信号强度：{{item.RSSI}}dBm ({{utils.max(0, item.RSSI + 100)}}%)</view>
+                     <view class="buttonv" bindtap="conbluetooth" id="{{item.deviceId}}" style="background-color:{{item.isConnect ?'#07c160' :'#8a8a8a' }}"> {{item.isConnect ? '已连接':'连接' }} </view>
+                </view>
+            </view>
+            <view class="item" style="margin-top: 30px;" wx:if="{{isConnect}}">
+                <view class="buttonv"  style="width:100px;background-color:#07c160;" bindtap="testprintln"  >
+                    <view>
+                      <image style="margin-top:3px;margin-left:0;margin-right:5px" class="bluetoothLoading" src="/images/loading.gif" wx:if="{{ispriint}}"></image>
+                    </view>
+                    <view>测试打印</view>
+               </view>
+            </view>
+
+       </view>
+
+   
+
+ </view>
+ 

@@ -1,0 +1,122 @@
+// pages/login/login.js
+
+var app = getApp()
+
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+
+  },
+
+  login: function (e) {
+
+    if (e.detail.errMsg === 'getUserInfo:ok') {
+
+      app.getUserInfo(e, function (ex) {
+        var pages = getCurrentPages();
+        var currPage = pages[pages.length - 1]; //当前页面
+        var prevPage = pages[pages.length - 2]; //上一个页面
+        wx.navigateBack({
+          delta: 1,
+          success: function () {
+            // console.log(JSON.stringify(prevPage) )
+            if (prevPage.route.indexOf('user') != -1) {
+              prevPage.getUserInfo();
+            } else if (prevPage.route.indexOf('blogin') != -1) {
+              prevPage.setUserInfo();
+            } else if (prevPage.route.indexOf('order') != -1) {
+              // prevPage.iniscrollTm();
+            }
+          }
+        })
+      })
+    }
+
+  },
+
+
+  cancellogin(e) {
+    var pages = getCurrentPages();
+    var currPage = pages[pages.length - 1]; //当前页面
+    var prevPage = pages[pages.length - 2]; //上一个页面
+    // console.log(JSON.stringify(prevPage))
+    wx.navigateBack({
+      delta: 1,
+      success: function () {
+
+      }
+    })
+  },
+
+
+
+
+
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    let that = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        var height = res.windowHeight;
+        that.setData({
+          height: height
+        })
+      }
+    });
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
+})

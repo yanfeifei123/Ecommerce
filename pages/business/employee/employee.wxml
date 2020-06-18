@@ -1,0 +1,32 @@
+ <view class="container" style="height:{{height}}px">
+
+ 	<view class="searchview">
+ 		<view class="searchviewform">
+ 			<text class="cuIcon-search" style="margin: 0 0.5em 0 0.8em;"></text>
+ 			<input class="searchviewforminput" type="text" placeholder="输入员工姓名" confirm-type="search" bindinput="searchfValue"></input>
+ 		</view>
+ 	</view>
+
+ 	<view class="item" style="border-bottom: 1px solid #ededed;" bindtap="openemployees">
+ 		<view class="itemview">
+ 			<image class="icon" src="/images/add.png"></image>
+ 			<view style="font-weight: bold;">添加员工</view>
+ 		</view>
+ 	</view>
+
+ 	<view class="item" style="border-bottom: 1px solid #ededed;" wx:for="{{userms}}">
+ 		<view class="itememployee">
+
+ 			<view style="display: flex;justify-content: center;align-items: center;">
+ 				<image class="avatar" src="{{item.avatarurl}}"> </image>
+ 				<view style="font-weight: bold;">{{item.nickname}} </view>
+ 			</view>
+
+ 			<view class="sbutton" data-id="{{item.id}}" bindtap="unboundUser">解绑</view>
+
+ 		</view>
+ 	</view>
+
+ </view>
+
+ 

@@ -1,0 +1,34 @@
+/* components/pop-up-wrapper/pop-up-wrapper.wxss */
+/* 居中布局
+<div class="middle-warp"><!--此处不可换行--><div class="middle-content">
+	//内容布局,随意写
+</div></div>
+ */
+
+.pop-up-wrapper{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.1)
+}
+
+.middle-warp {
+  position: relative;
+  height: 100%;
+  text-align: center;
+  background-color: transparent;
+}
+
+.middle-warp::before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.middle-content {
+  display: inline-block;
+  vertical-align: middle;
+}

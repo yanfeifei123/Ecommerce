@@ -1,0 +1,70 @@
+
+.topview{
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  
+}
+
+.item{
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+ 
+}
+
+.box{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  
+}
+
+.clickrate{
+  width: 80px;
+  height: 60px;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  /* padding: 5px; */
+  flex-wrap: wrap;
+}
+
+.clickrateitem{
+  width:100%;
+  padding: 5px;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+
+.dividingline{
+  height: 25px;
+  width: 1px;
+  background-color: #ededed;
+}
+
+.help{
+  height: 17px;
+  width: 17px;
+  margin-left: 3px;
+}
+
+.image{
+  height: 27px;
+  width: 27px;
+}
+
+.imagejt{
+  height: 16px;
+  width: 16px;
+}
+ 

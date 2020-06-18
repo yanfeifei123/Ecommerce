@@ -1,0 +1,10 @@
+<!--components/pop-up-wrapper/pop-up-wrapper.wxml-->
+
+
+<view wx:if="{{show}}" class='pop-up-wrapper' catchtouchmove ="true">
+  <view class="middle-warp">
+    <view class="middle-content">
+      <slot></slot>
+    </view>
+  </view>
+</view>

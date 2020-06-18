@@ -1,0 +1,214 @@
+ .cates {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+ }
+
+ .catesscroll-view {
+   width: 95%;
+   height: calc(100vh-55px);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-wrap: wrap;
+ }
+
+
+ .box {
+   width: 100%;
+   background-color: #fff;
+   border-radius: 14rpx;
+   padding: 10px 15rpx;
+   margin-top: 15rpx;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-wrap: wrap;
+ }
+
+ .box-item {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   margin: 8px 0;
+   padding: 5px;
+ }
+
+ .titleinfo {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: start;
+   flex-wrap: wrap;
+   padding: 5px;
+   margin-bottom: 15px;
+
+   justify-content: start;
+   font-size: 15px;
+   font-weight: bold;
+ }
+
+ .box-item-orderType {
+   width: 100%;
+   margin-top: 5px;
+   padding-bottom: 5px;
+   /* font-size: 11px; */
+   color: #333;
+   margin-bottom: 15px;
+ }
+
+ .opt {
+   width: 100%;
+   border-top: 1rpx solid #ededed;
+   padding-top: 15px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+ }
+
+ .optitem {
+   width: 90px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+ }
+
+ .optitemimagesview {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: #333;
+   font-size: 11px;
+   font-weight: bold;
+   width: 100%;
+ }
+
+ .optitemimages {
+   width: 28px;
+   height: 28px;
+
+ }
+
+ .titleinfo {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: start;
+   flex-wrap: wrap;
+   padding: 5px;
+   margin-bottom: 15px;
+   justify-content: start;
+   font-size: 15px;
+   font-weight: bold;
+ }
+
+ .orderdetails {
+   width: 100%;
+   border-top: 1rpx solid #ededed;
+   padding-top: 15px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-wrap: wrap;
+ }
+
+ .orderdetailsitem {
+   padding: 5px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   width: 100%;
+ }
+
+ .orderImagesview {
+   width: 15%;
+   display: flex;
+   align-items: center;
+   justify-content: start;
+ }
+
+ .orderImages {
+   height: 46px;
+   width: 46px;
+   border-radius: 5px;
+ }
+
+ .orderdetailnum {
+   width: 85%;
+   padding-left: 5px;
+   display: flex;
+   justify-content: start;
+   align-items: center;
+   flex-wrap: wrap;
+
+ }
+
+ .ordername {
+   width: 100%;
+   font-size: 30rpx;
+   font-weight: bold;
+   height: 25px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+ }
+
+ .ordernameNum {
+   width: 100%;
+   color: #666;
+   font-size: 12px;
+   display: flex;
+   justify-content: start;
+   align-items: center;
+   height: 25px;
+
+ }
+
+
+ .discount {
+   padding: 2px;
+   background-color: #ed776c;
+   color: #fff;
+   border-radius: 3px;
+   font-size: 20rpx;
+   margin-right: 3px;
+
+ }
+
+ .psinfoview {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-top: 1rpx solid #ededed;
+  padding-top: 15px;
+}
+
+ .orderdetailschild {
+   width: 100%;
+   margin: 5px 0;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+ }
+
+ .psinfoviewitem {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 15px 5px;
+ }
+
+ .psinfoviewitemStext {
+  font-size: 25rpx;
+  font-weight: bold;
+}

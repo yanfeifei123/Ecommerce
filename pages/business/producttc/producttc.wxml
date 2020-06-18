@@ -1,0 +1,22 @@
+<scroll-view scroll-y="true" scroll-with-animation="true" class="scroll-view" style="height:{{height}}px">
+
+<view class="goods">  
+
+	<view class="bproductitem" wx:for="{{bproducts}}">
+		<view class="bproductname">{{item.name}}</view>
+		<view>
+			<checkbox-group bindchange="checkboxChange" id="{{item.id}}">
+				<checkbox   value="{{item.id}}" checked="{{item.checked}}"></checkbox>
+			</checkbox-group>
+		</view>
+	</view>
+
+</view>
+
+</scroll-view>
+
+
+<view class="b_category_view_item">
+	<button class="sbutton" bindtap="submit">提交</button>
+	<button class="sbutton" bindtap="cancel">取消</button>
+</view>

@@ -1,0 +1,16 @@
+<!--pages/login/login.wxml-->
+
+<view class="cates" style="height:{{height}}px">
+	<view class="catesview">
+
+		<view class="viewitem" style="border-bottom: 1rpx solid #ededed;">
+			<image class="weixin" src="/images/weixin.png"></image>
+		</view>
+        <view class="viewitem" style="height:90px">
+             <view style="font-size: 30px;font-weight: 600px;">申请获得以下权限</view>
+             <view>获取你的公开信息（昵称，头像等） </view>
+        </view>
+		 <button class="button"  style="background:#eee;color:#666;"    bindtap="cancellogin" >取消</button> <button class="button"  open-type="getUserInfo" bindgetuserinfo="login">授权登录</button>
+	</view>
+
+</view>

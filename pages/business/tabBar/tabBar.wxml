@@ -1,0 +1,40 @@
+ 
+
+<home id="home" wx:if="{{PageCur=='home'}}"></home> <!-- 首页 -->
+<dataa id="dataa" wx:if="{{PageCur=='dataa'}}"></dataa> <!-- 数据分析 -->
+<product id="product"  wx:if="{{PageCur=='product'}}"></product> <!-- 商品 -->
+<user id="my" wx:if="{{PageCur=='my'}}"></user>  <!-- 我的 -->
+
+
+<view class="cu-bar tabbar bg-white shadow foot"  >
+
+  <view class="action" bindtap="NavChange" data-cur="home">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/busin/home{{PageCur=='home'?'_h':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='home'?'text-themeColor':'text-default'}}">首页</view>
+  </view>
+
+ 
+  <view class="action" bindtap="NavChange" data-cur="dataa">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/busin/dana{{PageCur=='dataa'?'_h':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='dataa'?'text-themeColor':'text-default'}}">数据分析</view>
+  </view>
+
+<view class="action" bindtap="NavChange" data-cur="product">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/busin/comm{{PageCur=='product'?'_h':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='product'?'text-themeColor':'text-default'}}">商品</view>
+  </view>
+
+  <view class="action" bindtap="NavChange" data-cur="my">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/busin/user{{PageCur=='my'?'_h':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='my'?'text-themeColor':'text-default'}}">我的</view>
+  </view>
+
+</view>

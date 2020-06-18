@@ -1,0 +1,45 @@
+<!-- 套餐选择页面  -->
+
+
+<view class="cates">
+
+
+
+
+	<view class="setmealtitle">
+		{{name}}
+	</view>
+
+	<scroll-view scroll-y="true" scroll-with-animation="true" style="height:{{height}}px">
+		<view class="setmeals">
+
+			<view class="setmeal" wx:for="{{bproductsitems}}">
+				<image class="viewImages" src="{{baseurl+item.imagepath}}"></image>
+				<view class="setmealname"> + {{item.name}} </view>
+				<view class="setmealprice">{{suffix}}{{item.price}} </view>
+				<view class="memberprice">会员{{suffix}}{{item.memberprice}} </view>
+				<view class="setmealopt">
+					<image wx:if="{{item.num!=0}}" class="food-list-opt-image" src="/images/minuscircle.png" data-index="{{index}}" bindtap="bindtapminus"></image>
+					<view wx:if="{{item.num!=0}}" class="food-list-opt-num"> {{item.num}} </view>
+					<image class="food-list-opt-image" src="/images/plus-circle.png" data-index="{{index}}" bindtap="bindtapplus"></image>
+				</view>
+			</view>
+
+		</view>
+
+	</scroll-view>
+</view>
+
+<view class="bottomcart">
+	<view class="cartView" bindtap="">
+		<image class="cart" src="/images/shop-cat-on1.png"></image>
+		<view class="productroundmark" wx:if="{{number!=0}}"> {{number}} </view>
+	</view>
+	<view class="totalprice">
+		<text style="font-size:35rpx;font-weight: bold; "> {{suffix}}{{totalprice}}</text>
+		<text style="font-size:25rpx;text-decoration: line-through;margin-left:5px;">会员{{suffix}}{{memberprice}}</text>
+	</view>
+	<view class="submitproduct" bindtap="isko">
+		选好了
+	</view>
+</view>

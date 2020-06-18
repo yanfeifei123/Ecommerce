@@ -1,0 +1,120 @@
+ <view class="searchview">
+ 	<view class="searchviewform">
+ 		<text class="cuIcon-search" style="margin: 0 0.5em 0 0.8em;"></text>
+ 		<input class="searchviewforminput" type="text" placeholder="搜索" confirm-type="search" bindinput="searchfValue"></input>
+ 	</view>
+ </view>
+
+ <view class="opt">
+ 	<button class="button" hover-class="hover" bindtap="showbcategory">
+ 		<image class="icon" src="/images/busin/fl.png"></image>
+ 		<view>添加分类 </view>
+ 	</button>
+ 	<view class="line"></view>
+ 	<button class="button" hover-class="hover" bindtap="showbproduct">
+ 		<image class="icon" src="/images/busin/asp.png"></image>
+ 		<view>添加商品 </view>
+ 	</button>
+ </view>
+ <view class="goods" style="height:{{height}}px">
+ 	<scroll-view scroll-y="true" class="left_category">
+ 		<view class="menu_item {{selectbcategoryid == item.id ? 'active':''}}" wx:for="{{bcategorys}}" data-id="{{item.id}}" bindtap="findByBproduct">
+ 			{{item.name}}
+ 			<image wx:if="{{selectbcategoryid == item.id}}" class="food-list-icon" src="/images/busin/edit.png" style="margin-left: 3px;" data-id="{{item.id}}" catchtap="editbcategory" />
+ 		</view>
+ 	</scroll-view>
+ 	<scroll-view scroll-y="true" class="right_content">
+
+ 		<view class="scrollcontainer">
+
+ 			<view class="food-list" wx:for="{{bproducts}}">
+ 				<view class="food-list-imageView">
+ 					<image class="food-list-image" src="{{baseurl+item.imagepath}}"></image>
+ 				</view>
+ 				<view class="food-list-rightview">
+ 					<view class="food-list-rightviewinfo">
+ 						<view style="font-size: 30rpx;font-weight: bold;">{{item.name}}</view>
+ 						<view style="font-size: 30rpx;font-weight: bold;color:#EF8732;" wx:if="{{item.packages ==1 || item.pid !=undefined}}">套餐</view>
+ 					</view>
+ 					<view class="food-list-rightviewinfo" style="color:#8a8a8a;">
+					  <view>价格：{{suffix}}{{item.price}}  </view>
+					  <view><image class="food-list-icon" src="/images/busin/tc.png" data-id="{{item.id}}"  catchtap="choosePackage" />  </view>
+					</view>
+ 					<view class="food-list-rightviewinfo">
+ 						<view style="color:#EF8732;">会员价：{{suffix}}{{item.memberprice}}</view>
+ 						<view>
+ 							<image class="food-list-icon" src="/images/busin/edit.png" data-id="{{item.id}}"  catchtap="editproduct" />
+ 						</view>
+ 						<view>
+ 							<image class="food-list-icon" src="/images/busin/delete.png" data-id="{{item.id}}" catchtap="deleteproduct" />
+ 						</view>
+ 					</view>
+ 				</view>
+ 			</view>
+
+
+ 		</view>
+ 	</scroll-view>
+ </view>
+
+
+ <view class="pop-up-wrapper" wx:if="{{bproductshow}}">
+ 	<view class="b_product_view">
+ 		<view class="b_product_title" style="font-size:25px;">{{bcategory.name}}</view>
+
+ 		<view class="b_product_item">
+ 			<input type="text" class="cinputtext" placeholder="名称" id="name"  bindblur="bproductattr" value="{{bproduct.name}}"></input>
+ 		</view>
+
+ 		<view class="b_product_item">
+ 			<input type="digit" class="cinputtext" placeholder="价格" id="price" bindblur="bproductattr" value="{{bproduct.price}}"></input>
+ 		</view>
+
+ 		<view class="b_product_item">
+ 			<input type="digit" class="cinputtext" placeholder="会员格" id="memberprice" bindblur="bproductattr" value="{{bproduct.memberprice}}"></input>
+ 		</view>
+
+ 		<view class="b_product_item">
+ 			<input type="number" class="cinputtext" placeholder="排序号" id="odr" bindblur="bproductattr" value="{{bproduct.odr}}"></input>
+ 		</view>
+ 		<!-- <view class="b_product_item">
+ 			<button class="sbutton" style="width:100%;" bindtap="choosePackage">关联套餐</button>
+ 		</view> -->
+
+ 		<view class="b_product_item">
+ 			<view class="b_product_imageb" data-id="{{bproduct.id}}" bindtap="chooseImage">
+ 				<image class="b_product_imageb_img"   wx:for="{{tempFilePaths}}"  wx:for-item="image" src="{{image}} "></image>
+				<!-- <image class="b_product_imageb_img1"   wx:if="{{tempFilePaths.length==0}}"   src="{{delsrc}} "></image> -->
+ 				<view style="margin-left:15px;" wx:if="{{tempFilePaths.length==0}}">图片上传</view>
+ 			</view>
+ 		</view>
+
+ 		<view class="b_category_view_item">
+ 			<button class="sbutton" bindtap="submitBproduct">提交</button>
+ 			<button class="sbutton" bindtap="hidebproduct">取消</button>
+ 		</view>
+
+ 	</view>
+ </view>
+
+
+ <!-- 分类操作  -->
+ <view class="pop-up-wrapper" wx:if="{{categoryopt}}">
+ 	<view class="b_category_view">
+
+
+ 		<view class="b_category_view_item">
+ 			<input type="text" class="cinputtext" placeholder="分类名称" id="cname" bindblur="bcategoryattr" value="{{bcategory.name}}"></input>
+ 		</view>
+ 		<view class="b_category_view_item">
+ 			<input type="number" class="cinputtext" placeholder="排序号" id="codr" bindblur="bcategoryattr" value="{{bcategory.odr}}"></input>
+ 		</view>
+
+ 		<view class="b_category_view_item">
+ 			<button class="sbutton" bindtap="submitbcategory">提交</button>
+ 			<button wx:if="{{bcategoryisdel}}" class="sbutton" style="background-color:#fb0028;" bindtap="deletebcategory">删除</button>
+ 			<button class="sbutton" bindtap="hidebcategory">取消</button>
+ 		</view>
+
+ 	</view>
+ </view>

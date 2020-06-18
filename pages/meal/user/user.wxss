@@ -1,0 +1,86 @@
+ 
+
+.cates {
+  /* height: calc(100vh-55px); */
+  position: relative;
+}
+
+
+.loginview{
+  width: 100%;
+  height: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:15px;
+}
+
+.loginview button{
+  background-color: transparent; 
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+}
+
+.topuser{
+  width: 100%;
+  height: 110px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding:15px;
+}
+
+.userInfo{
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}
+
+.nickName{
+  margin-left: 15px;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+
+.my{
+  width: 100%;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-wrap:wrap;
+  background-color: #fff;
+}
+
+.mylist{
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content:space-between ;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-bottom: 1rpx solid #ededed;
+}
+
+.active{
+  background-color: #D1D1D5;
+}
+
+
+.infotext{
+  margin-left: 10px;
+  width: 100%;
+}
+
+.signout{
+  height: 170rpx;
+  display: flex;
+  justify-content:center ;
+  align-items: center;
+  color: #666;
+}
+
+
+button::after{ border: none; } 

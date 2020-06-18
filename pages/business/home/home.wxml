@@ -1,0 +1,101 @@
+<!-- 商家后台  -->
+
+<view class="cates">
+	<view class="box">
+		<view class="boxtitle">
+
+			<view>我的应用</view>
+			<view style="display: flex;justify-content: center;align-items:center; ">
+				<switch checked="{{bornot}}" bindchange="commuteChange" type="switch" />
+			</view>
+
+		</view>
+		<view class="boxtappcenter">
+			<view class="boxtapp" hover-class="" hover-start-time="100" hover-stay-time="100" bindtap="viewbluetooth">
+				<image class="boxtappimage" src="/images/busin/dpj.png"></image>
+				<view>蓝牙设备</view>
+			</view>
+			<view class="boxtapp" hover-class="" hover-start-time="100" hover-stay-time="100" bindtap="viewOrderPage">
+				<image class="boxtappimage" src="/images/busin/dd.png"></image>
+				<view>我的订单</view>
+				<view class="messagecircle" wx:if="{{orderisNotNum!=0}}">{{orderisNotNum}}</view>
+			</view>
+			<view class="boxtapp" hover-class="" hover-start-time="100" hover-stay-time="100" bindtap="viewMdPage">
+				<image class="boxtappimage" src="/images/busin/mdgl.png"></image>
+				<view>门店管理</view>
+			</view>
+			<view class="boxtapp" hover-class="" hover-start-time="100" hover-stay-time="100" bindtap="employee">
+				<image class="boxtappimage" src="/images/busin/yg.png"></image>
+				<view>员工管理</view>
+			</view>
+			<view class="boxtapp" hover-class="" hover-start-time="100" hover-stay-time="100">
+				<image class="boxtappimage" src="/images/busin/cw.png"></image>
+				<view>财务结算</view>
+			</view>
+		</view>
+	</view>
+	<view class="box">
+		<view class="boxtitlespace-between">
+			<view style=""> 订单汇总</view>
+			<view class="boxtitlespace-tab">
+				<view class="boxtitlespace-tab-item" data-id="1" bindtap="findByOrderSummaryitem">
+					今天
+					<view class="line-style {{orderSummaryitem ==1 ?'line-style-selected':'' }} "></view>
+				</view>
+				<view class="boxtitlespace-tab-item" data-id="2" bindtap="findByOrderSummaryitem">
+					昨天
+					<view class="line-style {{orderSummaryitem ==2 ?'line-style-selected':'' }}"></view>
+				</view>
+				<view class="boxtitlespace-tab-item" data-id="3" bindtap="findByOrderSummaryitem">
+					本周
+					<view class="line-style {{orderSummaryitem ==3 ?'line-style-selected':'' }}"></view>
+				</view>
+				<view class="boxtitlespace-tab-item" data-id="4" bindtap="findByOrderSummaryitem">
+					本月
+					<view class="line-style {{orderSummaryitem ==4 ?'line-style-selected':'' }}"></view>
+				</view>
+			</view>
+		</view>
+		<view class="summary">
+
+			<view class="summary-item" style="border-top: 1px solid #ededed;border-right: 1px solid #ededed;">
+				<view class="summary-item-title">
+					订单总金额(元)
+				</view>
+				<view class="summary-item-price">
+					{{suffix}}{{orderSummary.totalfee}}
+				</view>
+			</view>
+
+			<view class="summary-item" style="border-top: 1px solid #ededed;">
+				<view class="summary-item-title">
+					订单数量(笔)
+				</view>
+				<view class="summary-item-price">
+					{{orderSummary.ordernum}}
+				</view>
+			</view>
+
+			<view class="summary-item" style="border-top: 1px solid #ededed;border-right: 1px solid #ededed;">
+				<view class="summary-item-title">
+					退款金额(元)
+				</view>
+				<view class="summary-item-price">
+					<text style="color:#EF8732"> {{suffix}}{{orderSummary.refundamount}}</text>
+				</view>
+			</view>
+
+			<view class="summary-item" style="border-top: 1px solid #ededed;">
+				<view class="summary-item-title">
+					退款单笔数(笔)
+				</view>
+				<view class="summary-item-price">
+					<text style="color:#EF8732">{{orderSummary.refundformnum}} </text>
+				</view>
+			</view>
+
+
+
+		</view>
+	</view>
+</view>

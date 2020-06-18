@@ -1,0 +1,56 @@
+<view class="cates">
+
+	<view class="list-tab">
+		<view class="list-tab-view">
+
+			<view class="list-tab-item" style="font-weight: bold;" wx:for="{{tabs}}" data-id="{{item.id}}" bindtap="selectedTabs">
+				{{item.name}}
+				<view class="messagecircle" wx:if="{{item.msg}}">{{item.num}}</view>
+				<view class="line-style {{tabid == item.id?'active':''}}"></view>
+			</view>
+
+
+		</view>
+	</view>
+
+	<coolui-scroll class="catesscroll-view" style="height:{{scrollheight}}px" page="{{scrollTm.page}}" totalPage="{{scrollTm.totalPage}}" bindrefresh="refreshTm" bindloadMore="loadMoreTm" isEmpty="{{branchOrders.length}}" emptyImg="{{scrollTm.emptyImg}}"   refreshStyle="black" refreshBackground="#f2f2f2" refreshTitleShow="{{false}}" refreshthreshold="{{90}}" refreshBackgroundImage="{{scrollTm.refreshBackgroundImage}}" refreshColor="{{scrollTm.refreshColor}}">
+		<view class="list-inner" slot="inner">
+			<view class="orderList" wx:for="{{branchOrders}}"  id="{{item.orderid}}" bindtap="viewordermd">
+
+				<view class="orderListitem" style="height: 50px;border-bottom: 1rpx solid #ededed;padding-bottom:10px;">
+					<view style="" class="orderListitem-left">
+					   <view style="width:100%;">
+						    #<text style="font-size: 18px;font-weight: bold;">	{{item.order}} {{item.type}}</text>
+						 </view>
+					
+					</view>
+					<view style="color:{{(item.state =='未完成' ||  item.state =='待退款' ||  item.state =='已退款') ?'#EF8732' :'#8a8a8a'}} ;" class="orderListitem-right">
+						{{item.state}} <text class="cuIcon-right lg text-gray right" style="margin-top:2px;margin-left:3px"></text>
+					</view>
+				</view>
+
+				<view class="orderListitem H" style="margin-top: 18px;">
+					<view class="orderListitem-left">下单时间：{{item.ordertime}} </view>
+					<view class="orderListitem-right">{{item.orderdate}}</view>
+				</view>
+
+				<view class="orderListitem H">
+					<view class="orderListitem-left">完成时间： <text style="color:#EF8732">{{item.hour}} </text></view>
+				</view>
+
+				<view class="orderListitem H">
+					<view class="orderListitem-left">下单人：{{item.username}} </view>
+					<view style="font-size: 15px;font-weight: bold;margin-right:8px" class="orderListitem-right">
+						{{suffix}}{{item.totalfee}}
+					</view>
+				</view>
+
+			</view>
+		</view>
+
+	</coolui-scroll>
+
+
+
+
+</view>
